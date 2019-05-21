@@ -7,7 +7,7 @@ MAINTAINER "Ivo Bek" "ibek@redhat.com"
 ####### ENVIRONMENT ############
 ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
 ENV JBOSS_BIND_ADDRESS 0.0.0.0
-ENV KIE_SERVER_VERSION 6.4.0-SNAPSHOT
+ENV KIE_SERVER_VERSION 6.5.0.Final
 ENV KJAR vacation-process-1.0-SNAPSHOT.jar
 LABEL org.kie.kie-server.artifact=org.kie.server:kie-server:war:webc
 EXPOSE 8080
