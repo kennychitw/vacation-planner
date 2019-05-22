@@ -37,11 +37,11 @@ ADD ${KJAR} /${KJAR}
 # Add the kie-server WAR artifact from the Maven repository.
 RUN yum -y install wget
 
-# RUN wget https://repository.jboss.org/nexus/service/local/repositories/central/content/org/kie/server/kie-server/${KIE_SERVER_VERSION}/kie-server-${KIE_SERVER_VERSION}-ee7.war -O $JBOSS_HOME/standalone/deployments/kie-server-archive.war
+# RUN wget http://central.maven.org/maven2/org/kie/server/kie-server/${KIE_SERVER_VERSION}/kie-server-${KIE_SERVER_VERSION}-ee7.war -O $JBOSS_HOME/standalone/deployments/kie-server-archive.war
 
-RUN wget https://repository.jboss.org/nexus/service/local/repositories/snapshots/content/org/kie/server/kie-server/6.4.0-SNAPSHOT/kie-server-6.4.0-20160305.020752-701-ee7.war -O $JBOSS_HOME/standalone/deployments/kie-server-archive.war
+RUN wget http://central.maven.org/maven2/org/kie/server/kie-server/6.5.0.Final/kie-server-6.5.0.Final-ee7.war -O $JBOSS_HOME/standalone/deployments/kie-server-archive.war
 
-# ADD kie-server-6.4.0-SNAPSHOT-ee7.war $JBOSS_HOME/standalone/deployments/kie-server-archive.war
+# ADD kie-server-6.5.0.Final-ee7.war $JBOSS_HOME/standalone/deployments/kie-server-archive.war
 
 # Work with unpacked WAR archives in WildFly, so other images can override webapp files (such as persistence.xml,etc)
 RUN unzip -q -d $JBOSS_HOME/standalone/deployments/kie-server.war $JBOSS_HOME/standalone/deployments/kie-server-archive.war && \
